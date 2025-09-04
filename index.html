@@ -3,46 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listagem Simples</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      color: #333;
-    }
-    ul, ol {
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin-bottom: 20px;
-    }
-    li {
-      padding: 5px 0;
-    }
-  </style>
+  <title>GameJourney</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1>Lista Não Ordenada</h1>
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
-  </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="btn-home" onclick="window.location.href='index.html'">GameJourney</button>
+    </div>
+    <div class="nav-right">
+      <button class="btn-profile">Login</button>    
+    </div>
+  </nav>
 
-  <h1>Lista Ordenada</h1>
-  <ol>
-    <li>Primeiro</li>
-    <li>Segundo</li>
-    <li>Terceiro</li>
-    <li>Quarto</li>
-  </ol>
+  <!-- HERO IMERSIVO -->
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="assets/12691871_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+      <h1>GAME JOURNEY</h1>
+      <p>Sua jornada, seus jogos, sua biblioteca</p>
+      <button class="btn-start">Começar</button>
+    </div>
+  </section>
 
+  <!-- ONBOARDING -->
+  <section class="onboarding" id="onboarding">
+    <h2>Como começar sua jornada</h2>
+    <div class="cards-onboarding">
+      <div class="onboarding-card">
+        <h3>Adicionar Jogos</h3>
+        <p>Registre seus jogos favoritos rapidamente.</p>
+      </div>
+      <div class="onboarding-card">
+        <h3>Organizar Biblioteca</h3>
+        <p>Categorize e filtre seus jogos da forma que preferir.</p>
+      </div>
+      <div class="onboarding-card">
+        <h3>Monitore seu desempenho e resultados</h3>
+        <p>Acompanhe seu progresso e organize sua coleção de forma prática e divertida, mantendo tudo sempre atualizado.</p>
+      </div>
+    </div>
+    <button class="btn-next" onclick="window.location.href='./pages/library.html'">Criar biblioteca</button>
+
+  </section>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

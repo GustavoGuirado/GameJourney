@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Biblioteca - GameJourney</title>
+  <link rel="stylesheet" href="../css/library.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="btn-home" onclick="window.location.href='../index.html'">GameJourney</button>
+    </div>
+  </nav>
+
+  <!-- Sidebar / Abas -->
+  <aside class="sidebar">
+    <button id="btn-library" class="active">Biblioteca</button>
+    <button id="btn-favorites">Favoritos</button>
+  </aside>
+
+  <!-- Conteúdo -->
+  <main class="library">
+    <!-- Formulário -->
+    <form id="game-form">
+      <input type="text" id="game-title" placeholder="Nome do jogo">
+      <button type="submit" id="add-btn">Adicionar</button>
+    </form>
+
+    <!-- Lista de Jogos -->
+    <ul id="game-list" class="games-list"></ul>
+
+    <!-- Lista de Favoritos -->
+    <ul id="favorites-list" class="games-list" style="display: none;"></ul>
+  </main>
+
+  <script src="../js/library.js"></script>
+</body>
+</html>
