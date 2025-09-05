@@ -29,16 +29,17 @@ body {
 }
 
 .nav-left button, .nav-right button {
-  background: linear-gradient(135deg, #7c5cff, #ff5c7a);
+  background: linear-gradient(45deg, #7c5cff, #ff5c7a);
   border: none;
   border-radius: 12px;
   padding: 8px 16px;
   cursor: pointer;
   color: #fff;
   font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
   margin-right: 20px;
   box-shadow: 0 2px 8px rgba(124, 92, 255, 0.3), 0 2px 12px rgba(255, 92, 122, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .nav-left button:hover, .nav-right button:hover {
