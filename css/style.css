@@ -24,43 +24,30 @@ body {
   top: 0;
   width: 100%;
   height: 64px;
-  box-shadow: 0 0 15px #7c5cff, 0 0 30px #ff5c7a;
+
   z-index: 1000;
 }
-
-.nav-center input:focus {
-  border-color: #ff5c7a;
-  box-shadow: 0 0 10px #ff5c7a, 0 0 20px #7c5cff;
-}
-
-.nav-center input::placeholder {
-  color: #a4a9bd;
-}
-
 /* ============================= */
 /* Botões padrão */
 /* ============================= */
 button {
-  background: linear-gradient(45deg, #7c5cff, #ff5c7a);
+  background:#2a2a3f;
   border: none;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 12px;
-  box-shadow: 0 0 8px #7c5cff, 0 0 12px #ff5c7a;
   transition: 0.3s;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #7c5cff, 0 0 20px #ff5c7a;
 }
 
 /* Botão "Minha Biblioteca" */
 .btn-library {
-  background: linear-gradient(45deg, #7c5cff, #ff5c7a);
-  border: 2px solid #ff5c7a;
+  background:#2a2a3f;
   margin-left: 10px; 
 }
 
@@ -101,7 +88,6 @@ button:hover {
 
 .hero-overlay h1 {
   font-size: 4rem;
-  text-shadow: 0 0 10px #7c5cff, 0 0 20px #ff5c7a;
 }
 
 .hero-overlay p {
@@ -116,7 +102,6 @@ button:hover {
   font-size: 1.2rem;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 0 8px #7c5cff, 0 0 12px #ff5c7a;
 }
 
 /* ============================= */
@@ -131,7 +116,6 @@ button:hover {
 .onboarding h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  text-shadow: 0 0 10px #7c5cff;
 }
 
 .cards-onboarding {
@@ -146,13 +130,11 @@ button:hover {
   padding: 20px;
   border-radius: 16px;
   width: 250px;
-  box-shadow: 0 0 10px #7c5cff, 0 0 20px #ff5c7a;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .onboarding-card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 25px #7c5cff, 0 0 35px #ff5c7a;
 }
 
 .onboarding-card h3 {

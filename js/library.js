@@ -1,4 +1,3 @@
-// ====== Seletores ======
 const gameForm = document.getElementById("game-form");
 const gameInput = document.getElementById("game-title");
 const libraryContainer = document.getElementById("game-list");
@@ -7,12 +6,10 @@ const favoritesContainer = document.getElementById("favorites-list");
 const btnLibrary = document.getElementById("btn-library");
 const btnFavorites = document.getElementById("btn-favorites");
 
-// ====== Constantes ======
 const API_KEY = "3d75b2d15f0d4d38a955d8a1e80b99cc"; 
 let library = JSON.parse(localStorage.getItem("library")) || [];
 let currentTab = "library"; 
 
-// ====== Utilidades ======
 function saveLibrary() {
   localStorage.setItem("library", JSON.stringify(library));
 }
@@ -21,7 +18,6 @@ function showMessage(container, message, type = "info") {
   container.innerHTML = `<p class="${type}-msg">${message}</p>`;
 }
 
-// ====== Renderização ======
 function renderLibrary() {
   libraryContainer.innerHTML = "";
   favoritesContainer.innerHTML = "";
@@ -43,17 +39,24 @@ function renderLibrary() {
           <img class="game-cover" src="${game.background_image}" alt="${game.name}">
           <div class="game-title">${game.name}</div>
           <div class="actions">
-            <button class="btn-fav ${game.favorite ? "favorited" : ""}">
-              ${game.favorite ? "★" : "☆"}
+            <button class="btn-fav ${game.favorite ? "favorited" : ""}" data-id="${game.id}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                   fill="${game.favorite ? "currentColor" : "none"}" 
+                   stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" 
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                         2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                         C13.09 3.81 14.76 3 16.5 3
+                         19.58 3 22 5.42 22 8.5
+                         c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
             </button>
             <button class="btn-delete">🗑️</button>
           </div>
         </div>
       `;
 
-      // Favoritar
       card.querySelector(".btn-fav").addEventListener("click", () => toggleFavorite(game));
-      // Excluir
       card.querySelector(".btn-delete").addEventListener("click", () => deleteGame(game.id));
 
       list.appendChild(card);
@@ -64,7 +67,6 @@ function renderLibrary() {
   favoritesContainer.style.display = currentTab === "favorites" ? "flex" : "none";
 }
 
-// ====== Ações ======
 function toggleFavorite(game) {
   game.favorite = !game.favorite;
   saveLibrary();
@@ -77,11 +79,9 @@ function deleteGame(id) {
   renderLibrary();
 }
 
-// ====== Buscar jogos da API (apenas 1 vez) ======
 async function fetchLibrary() {
   const initialized = localStorage.getItem("libraryInitialized");
 
-  // Se já inicializou, apenas renderiza o que está salvo
   if (initialized) {
     renderLibrary();
     return;
@@ -100,10 +100,8 @@ async function fetchLibrary() {
       favorite: false
     }));
 
-    // Salva a biblioteca e marca como inicializada
     saveLibrary();
     localStorage.setItem("libraryInitialized", "true");
-
     renderLibrary();
   } catch (err) {
     console.error("Erro ao buscar biblioteca:", err);
@@ -111,7 +109,6 @@ async function fetchLibrary() {
   }
 }
 
-// ====== Adicionar jogo pelo input ======
 async function addGameByName(name) {
   try {
     const res = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&search=${encodeURIComponent(name)}&page_size=1`);
@@ -141,7 +138,6 @@ async function addGameByName(name) {
   }
 }
 
-// ====== Eventos ======
 btnLibrary.addEventListener("click", () => {
   currentTab = "library";
   renderLibrary();
@@ -162,5 +158,4 @@ gameForm.addEventListener("submit", e => {
   if (name) addGameByName(name);
 });
 
-// ====== Inicialização ======
 fetchLibrary();
